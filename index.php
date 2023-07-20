@@ -17,20 +17,20 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset, true)
 <?php else: ?>
     <ul id="index">
         <?php foreach ($articles as $article): ?>
-            <li>
+            <li class="article-item">
                 <article>
                     <h2><a class="article-name"href="article.php?id=<?= $article['id']; ?>"><?= htmlspecialchars($article['title']); ?></a></h2>
                     
-                    <time datetime="<?= $article['published_at'] ?>"><?php 
+                    <time class="article-date" datetime="<?= $article['published_at'] ?>"><?php 
                         $datetime = new DateTime($article['published_at']); 
                         echo $datetime->format("j F,Y");
                     ?></time>
 
                     <?php if ($article['category_names']) : ?>
-                    <p>Categories:
+                    <p class="article-category">Categories:
                         <?php foreach ($article['category_names'] as $name) : ?>
                             
-                            <?= htmlspecialchars($name); ?>
+                            <?= htmlspecialchars($name || ''); ?>
                         <?php endforeach; ?>
                     </p>
                     <?php endif; ?>

@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 /* Navbar */
 
 .brand-name {
@@ -23,9 +27,47 @@
 
 /* Main Page */
 
+.article-category {
+  font-size: small;
+}
+
+.article-date {
+  font-style: italic;
+  font-size: small;
+}
+
+.article-item {
+  margin: 2rem 0;
+  border-color:#dbd8e3;
+  border-style: none none dashed none;
+}
+
 .article-name {
+  color: #222831;
+}
+
+.article-name:hover {
   color: black;
 }
+
+/* Pagination */
+
+.pagination > li > a
+{
+    background-color: #222831;
+    color: white;
+}
+
+.pagination > li > a:hover {
+  background-color: white;
+  color: #222831;
+}
+
+.pagination-button {
+  margin-top: 40px;
+}
+
+/* ??? */
 
 ul#index {
   padding-left: 0;
