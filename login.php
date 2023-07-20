@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <?php require 'includes/header.php'; ?>
 
-<h2>Login</h2>
+<h2 class="login-title">Login</h2>
 
 <?php if (!empty($error)): ?>
 
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post">
 
-    <div class="form-group">
+    <div class="form-group login-username-div">
         <label for="username">Username</label>
         <input name="username" id="username" class="form-control">
     </div>
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="password" id="password" class="form-control">
     </div>
 
-    <button class="btn">Log in</button>
+    <button class="btn btn-dark login-button">Log in</button>
 
 </form>
 
