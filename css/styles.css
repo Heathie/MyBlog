@@ -1,3 +1,32 @@
+/* Navbar */
+
+.brand-name {
+  color: white;
+  font-size: 4rem;
+}
+
+.brand-name:hover {
+  color: white;
+}
+
+.link-name {
+  color: white;
+}
+
+.link-name:hover {
+  color: gray;
+}
+
+.navbar-container {
+  padding: 20px 40px;
+}
+
+/* Main Page */
+
+.article-name {
+  color: black;
+}
+
 ul#index {
   padding-left: 0;
   list-style-type: none;

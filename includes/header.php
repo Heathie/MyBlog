@@ -5,34 +5,35 @@
     <title>My blog</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/jquery.datetimepicker.min.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
-
-    <div class="container">
+<body class="bg-body-secondary">
 
     <header>
-        <h1>My blog</h1>
-    </header>
-    <nav>
+    <nav class="navbar bg-dark">
+    <div class="container-fluid navbar-container">
+        <span class="navbar-brand brand-name h1">MyBlog</span>
         <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link link-name" href="/">Home</a></li>
 
-            <?php if (Auth::isLoggedIn()) : ?>
+            <?php if (Auth::isLoggedIn()): ?>
 
-                <li class="nav-item"><a class="nav-link" href="/admin/">Admin</a></li>
-                <li class="nav-item"><a class="nav-link" href="/logout.php">Log out</a></li>
+                <li class="nav-item"><a class="nav-link link-name" href="/admin/">Admin</a></li>
+                <li class="nav.item"><a class="nav-link link-name" href="/contact.php">Contact</a></li>
+                <li class="nav-item"><a class="nav-link link-name" href="/logout.php">Log out</a></li>
 
-            <?php else : ?>
+            <?php else: ?>
 
-                <li class="nav-item"><a class="nav-link" href="/login.php">Log in</a></li>
+                <li class="nav.item"><a class="nav-link link-name" href="/contact.php">Contact</a></li>
+                <li class="nav-item"><a class="nav-link link-name" href="/login.php">Log in</a></li>
 
             <?php endif; ?>
-
-            <li class="nav.item"><a class="nav-link" href="/contact.php">Contact</a></li>
         </ul>
+        </div>
     </nav>
+    </header>
+    <div class="container bg-body-secondary">
     <main>
