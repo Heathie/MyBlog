@@ -67,19 +67,23 @@ a {
   margin-top: 40px;
 }
 
-/* Login Page */
+/* Login and Contact Page */
 
-.login-button {
+.login-button, .contact-button {
   margin-top: 2rem;
 }
 
-.login-title {
+.login-title, .contact-title {
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
 .login-username-div {
   margin-bottom: 2rem;
+}
+
+.contact-div{
+  margin-top: 1rem;
 }
 
 /* ??? */

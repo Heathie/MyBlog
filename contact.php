@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 <?php require 'includes/header.php'; ?>
-<h2>Contact</h2>
+<h2 class="contact-title">Contact</h2>
 
 <?php if($sent): ?>
   <p>Message sent.</p>
@@ -83,25 +83,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post" id="formContact">
 
-    <div class="form-group">
+    <div class="form-group contact-div">
         <label for="email">Your email</label>
         <input class="form-control" name="email" id="email" type="email" placeholder="Your email"
         value="<?= htmlspecialchars($email) ?>">
       </div>
 
-    <div class="form-group">
+    <div class="form-group contact-div">
         <label for="subject">Subject</label>
         <input class="form-control" name="subject" id="subject" placeholder="Subject"
         value="<?= htmlspecialchars($subject) ?>">
     </div>
 
-    <div class="form-group">
+    <div class="form-group contact-div">
         <label for="message">Message</label>
         <textarea class="form-control" name="message" id="message" placeholder="Message"
         ><?= htmlspecialchars($message) ?></textarea>
     </div>
 
-    <button class="btn">Send</button>
+    <button class="btn btn-dark contact-button">Send</button>
 </form>
 
 <?php endif ?>
