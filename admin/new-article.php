@@ -33,6 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h2>New article</h2>
 
-<?php require 'includes/article-form.php'; ?>
+<?php require './includes/article-form.php'; ?>
 
 <?php require '../includes/footer.php'; ?>

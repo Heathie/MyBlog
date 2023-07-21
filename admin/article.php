@@ -20,12 +20,12 @@ if (isset($_GET['id'])) {
 
 <?php if ($article): ?>
     <article>
-        <h2>
+        <h2 class="article-title">
             <?= htmlspecialchars($article[0]['title']); ?>
         </h2>
 
         <?php if ($article[0]['published_at']): ?>
-            <time>
+            <time class="article-date">
                 <?= $article[0]['published_at'] ?>
             </time>
         <?php else: ?>
@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
         <?php endif; ?>
 
         <?php if ($article[0]['category_name']): ?>
-            <p>Categories:
+            <p class="article-category">Categories:
                 <?php foreach ($article as $a): ?>
                     <?= htmlspecialchars($a['category_name']); ?>
                 <?php endforeach; ?>
@@ -42,15 +42,17 @@ if (isset($_GET['id'])) {
         <?php endif; ?>
 
         <?php if ($article[0]['image_file']): ?>
-            <img src="/uploads/<?= $article->image_file; ?>">
+            <img class="article-image" src="/uploads/<?= $article[0]['image_file']; ?>">
         <?php endif; ?>
         <p>
             <?= htmlspecialchars($article[0]['content']); ?>
         </p>
     </article>
-    <a href="edit-article.php?id=<?= $article[0]['id']; ?>">Edit</a>
-    <a class="delete" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a>
-    <a href="edit-article-image.php?id=<?= $article[0]['id']; ?>">Edit image</a>
+    
+    <a class="btn btn-secondary btn-sm article-button" role="button" href="edit-article.php?id=<?= $article[0]['id']; ?>">Edit article</a>
+    <a class="delete btn btn-outline-secondary btn-sm article-button" role="button" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete article</a>
+    <a class="btn btn-secondary btn-sm article-button" role="button" href="edit-article-image.php?id=<?= $article[0]['id']; ?>">Edit image</a>
+
 <?php else: ?>
     <p>Article not found.</p>
 

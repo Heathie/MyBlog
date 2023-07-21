@@ -10,6 +10,10 @@ require dirname(__DIR__) . '/config.php';
 
 function errorHandler($level, $message, $file, $line)
 {
+  echo $message;
+  echo $level;
+  echo $file;
+  echo $line;
   throw new ErrorException($message, 0, $level, $file, $line);
 }
 
@@ -32,5 +36,5 @@ function exceptionHandler($exception)
   exit();
 }
 
-set_error_handler('errorHandler');
-set_exception_handler('exceptionHandler');
+set_error_handler("errorHandler");
+set_exception_handler("exceptionHandler");

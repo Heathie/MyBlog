@@ -19,24 +19,27 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset, true)
         <?php foreach ($articles as $article): ?>
             <li class="article-item">
                 <article>
-                    <h2><a class="article-name"href="article.php?id=<?= $article['id']; ?>"><?= htmlspecialchars($article['title']); ?></a></h2>
-                    
-                    <time class="article-date" datetime="<?= $article['published_at'] ?>"><?php 
-                        $datetime = new DateTime($article['published_at']); 
-                        echo $datetime->format("j F,Y");
-                    ?></time>
+                    <h2 class="article-name"><a href="article.php?id=<?= $article['id']; ?>"><?= htmlspecialchars($article['title']); ?></a></h2>
 
-                    <?php if ($article['category_names']) : ?>
-                    <p class="article-category">Categories:
-                        <?php foreach ($article['category_names'] as $name) : ?>
-                            
-                            <?= htmlspecialchars($name || ''); ?>
-                        <?php endforeach; ?>
-                    </p>
+                    <time class="article-date" datetime="<?= $article['published_at'] ?>"><?php
+                      $datetime = new DateTime($article['published_at']);
+                      echo $datetime->format("j F,Y");
+                      ?></time>
+
+                    <?php if ($article['category_names']): ?>
+                        <p class="article-category">Categories:
+                            <?php foreach ($article['category_names'] as $name): ?>
+
+                                <?= htmlspecialchars($name || ''); ?>
+                            <?php endforeach; ?>
+                        </p>
                     <?php endif; ?>
-                    
+
                     <p>
-                        <?= htmlspecialchars($article['content']); ?>
+                        <?= htmlspecialchars(substr($article['content'], 0, 300)); ?>
+                        <?php if (strlen($article['content']) > 300): ?>
+                            ...
+                        <?php endif; ?>
                     </p>
                 </article>
             </li>

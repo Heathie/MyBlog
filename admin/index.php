@@ -14,9 +14,9 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
 
 <?php require '../includes/header.php'; ?>
 
-<h2>Administration</h2>
+<h2 class="admin-title">Administration</h2>
 
-<p><a href="new-article.php">New article</a></p>
+<a class="btn btn-secondary btn-sm new-article-btn" role="button" href="new-article.php">New article</a>
 
 <?php if (empty($articles)): ?>
     <p>No articles found.</p>
@@ -31,7 +31,7 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
             <?php foreach ($articles as $article): ?>
                 <tr>
                     <td>
-                        <article>
+                        <article class="article-name">
                             <a href="article.php?id=<?= $article['id']; ?>"><?= htmlspecialchars($article['title']); ?></a>
                         </article>
                     </td>
@@ -42,7 +42,7 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
                             </time>
                             <?php else : ?>
                                 Unpublished
-                                <button class="publish" data-id="<?= $article['id'] ?>">Publish</button>
+                                <button class="publish btn btn-outline-secondary btn-sm" data-id="<?= $article['id'] ?>">Publish</button>
                         <?php endif; ?>
                     </td>
                 </tr>
