@@ -99,25 +99,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php require '../includes/header.php'; ?>
 
-<h2>Edit article image</h2>
+<h2 class="edit-image-title">Edit article image</h2>
+
+<div class="back-to-article-div" >
+  <a class="back-to-article-link" href="article.php?id=<?= $article->id; ?>"><- Back to article</a>
+</div>
 
 <?php if ($article->image_file): ?>
-  <img src="/uploads/<?= $article->image_file; ?>">
-  <a class="delete" href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
+  <img class="article-image" src="/uploads/<?= $article->image_file; ?>">
 <?php endif; ?>
 
-<?php if (isset($error)) : ?>
-  <p><?= $error ?></p>
+<?php if (isset($error)): ?>
+  <p>
+    <?= $error ?>
+  </p>
 <?php endif; ?>
 
-<form method="post" enctype="multipart/form-data">
-  <div>
-    <label for="file">Image file</label>
-    <input type="file" name="file" id="file">
+<div>
+  <div class="image-form-div">
+    <form method="post" enctype="multipart/form-data">
+      <div class="image-file-div">
+        <label for="file">Image file</label>
+        <input type="file" name="file" id="file">
+      </div>
+
+      <button class="btn btn-dark">Upload</button>
+
+    </form>
   </div>
-
-  <button>Upload</button>
-
-</form>
+  <div class="image-form-div">
+    <?php if ($article->image_file): ?>
+      <a class="delete btn btn-outline-dark deletion-button" role="button"
+        href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
+    <?php endif; ?>
+  </div>
+</div>
 
 <?php require '../includes/footer.php'; ?>

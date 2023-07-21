@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <?php require '../includes/header.php'; ?>
 
-<h2>Delete article</h2>
+<h2 class="delete-article-title" >Delete article</h2>
 
 <form method="post">
   <p>Are you sure?</p>
 
-  <button>Delete</button>
-  <a href="article.php?id=<?= $article->id; ?>">Cancel</a>
+  <button class="btn btn-dark deletion-button">Delete</button>
+  <a class="btn btn-outline-dark deletion-button" role="button" href="article.php?id=<?= $article->id; ?>">Cancel</a>
 </form>
 
 <?php require '../includes/footer.php'; ?>

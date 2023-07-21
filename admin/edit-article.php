@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php require '../includes/header.php'; ?>
 
-<h2>Edit article</h2>
+<h2 class="edit-article-title">Edit article</h2>
 
 <?php require 'includes/article-form.php'; ?>
 

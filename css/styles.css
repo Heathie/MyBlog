@@ -42,11 +42,11 @@ a {
   border-style: none none dashed none;
 }
 
-.article-name > a {
+.article-name > a, .back-to-article-link {
   color: #222831;
 }
 
-.article-name:hover > a {
+.article-name:hover > a, .back-to-article-link:hover {
   color: #5c5470;
 }
 
@@ -73,7 +73,7 @@ a {
   margin-top: 2rem;
 }
 
-.login-title, .contact-title, .admin-title, .article-title {
+.login-title, .contact-title, .admin-title, .article-title, .new-article-title, .edit-article-title, .delete-article-title, .edit-image-title {
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
@@ -88,7 +88,7 @@ a {
 
 /* Admin */
 
-.new-article-link {
+.new-article-link, .back-to-article-link {
   font-size: large;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -107,12 +107,29 @@ a {
 .article-image {
   max-height: 30rem;
   float: right;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+  margin: 0 0 1rem 1rem;
 }
 
-.article-button {
+.article-button, .deletion-button {
   margin: 1rem 1rem 0 0;
+}
+
+/* New and Edite article page */
+
+.article-edition-div {
+  margin: 1rem 0;
+}
+
+.image-file-div {
+  margin: 1rem 0;
+}
+
+.image-form-div {
+  display: inline-block;
+}
+
+.back-to-article-div {
+  margin-bottom: 2rem;
 }
 
 /* ??? */
